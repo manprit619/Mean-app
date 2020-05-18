@@ -5,7 +5,7 @@ var mongojs = require('mongojs');
 
 
 
-// Get All Tasks
+//// Get All Tasks
 router.get('/tasks', function(req, res, next){
     db.tasks.find(function(err, tasks){
         if(err){
@@ -15,7 +15,7 @@ router.get('/tasks', function(req, res, next){
     });
 });
 
-// Get Single Task
+///Get Single Task
 router.get('/task/:id', function(req, res, next){
     db.tasks.findOne({_id: mongojs.ObjectId(req.params.id)}, function(err, task){
         if(err){
@@ -25,7 +25,7 @@ router.get('/task/:id', function(req, res, next){
     });
 });
 
-//Save Task
+/////Save Task
 router.post('/task', function(req, res, next){
     var task = req.body;
     if(!task.title || !(task.isDone + '')){
@@ -43,7 +43,7 @@ router.post('/task', function(req, res, next){
     }
 });
 
-// Delete Task
+/////Delete Task
 router.delete('/task/:id', function(req, res, next){
     db.tasks.remove({_id: mongojs.ObjectId(req.params.id)}, function(err, task){
         if(err){
@@ -53,7 +53,7 @@ router.delete('/task/:id', function(req, res, next){
     });
 });
 
-// Update Task
+//// Update Task
 router.put('/task/:id', function(req, res, next){
     var task = req.body;
     var updTask = {};
