@@ -1,3 +1,5 @@
-# mean_mytasklist
-MEAN application to manage tasks
+
+I made MEAN app to manage tasks.
+
+Don't forget to add Npm install.
 
